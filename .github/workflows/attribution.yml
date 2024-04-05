@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install fossa-cli
         run: |
-          ./install-latest.sh -d
+          curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install-latest.sh | bash
 
       # since this is only invoked after the release is published,
       # we can safely presume that fossa has ran dependency scan on the commit
